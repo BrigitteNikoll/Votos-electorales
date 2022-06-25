@@ -8,7 +8,7 @@ import {
   } from '@mui/material';
 
  const Candidatos = ({ candidatos, setCandidatos }) => {
-    const votar = votarPor => {
+    const votar = (votarPor) => {
       const nuevosVotos = votarPor.votos + 1;
   
       const nuevos = candidatos.map(candidato => {

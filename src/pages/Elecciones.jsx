@@ -4,7 +4,7 @@ import Resumen from "../components/Resumen";
 
 const Elecciones = ({ candidatos, setCandidatos }) => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={5}>
       <Candidatos candidatos={candidatos} setCandidatos={setCandidatos} />
 
       <Grid container item spacing={2}>

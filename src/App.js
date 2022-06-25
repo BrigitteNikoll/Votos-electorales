@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Elecciones from "./pages/Elecciones.jsx"
 
-
 const initialState = [
   {nombre: "Hugo", votos: 0},
   {nombre: "Andrew", votos: 0},
