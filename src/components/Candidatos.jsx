@@ -6,8 +6,13 @@ import {
     Typography,
     Card,
   } from '@mui/material';
+  import { useContext } from "react";
+  import { CandidatosContext } from "../utils/CandidatosContext";
 
- const Candidatos = ({ candidatos, setCandidatos }) => {
+
+ const Candidatos = () => {
+  const { candidatos, setCandidatos } = useContext(CandidatosContext)
+
     const votar = (votarPor) => {
       const nuevosVotos = votarPor.votos + 1;
   

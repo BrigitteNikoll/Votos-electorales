@@ -2,13 +2,13 @@ import { Grid } from "@mui/material";
 import Candidatos from "../components/Candidatos";
 import Resumen from "../components/Resumen";
 
-const Elecciones = ({ candidatos, setCandidatos }) => {
+const Elecciones = () => {
   return (
     <Grid container spacing={5}>
-      <Candidatos candidatos={candidatos} setCandidatos={setCandidatos} />
+      <Candidatos />
 
       <Grid container item spacing={2}>
-        <Resumen candidatos={candidatos}></Resumen>
+        <Resumen />
       </Grid>
     </Grid>
   );

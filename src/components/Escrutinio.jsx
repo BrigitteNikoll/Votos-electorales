@@ -1,6 +1,11 @@
 import { Card, CardContent, Typography, Grid } from '@mui/material';
+import { useContext } from "react";
+import { CandidatosContext } from "../utils/CandidatosContext";
 
-const Escrutinio = ({ candidatos }) => {
+
+const Escrutinio = () => {
+  const { candidatos } = useContext(CandidatosContext)
+
   return (
     <Grid item xs={12} md={6}>
       <Card>
