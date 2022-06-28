@@ -2,8 +2,6 @@ import { Card, CardContent, Grid, Typography } from "@mui/material";
 import { useContext } from "react";
 import { CandidatosContext } from "../utils/CandidatosContext";
 
-
-
 const Total = () => {
   const { candidatos } = useContext(CandidatosContext)
 
