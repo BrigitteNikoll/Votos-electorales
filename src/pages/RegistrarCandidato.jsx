@@ -12,6 +12,7 @@ import { CandidatosContext } from "../utils/CandidatosContext";
 
 const RegistrarCandidato = () => {
   const [candidato, setCandidato] = useState(null);
+  console.log(candidato)
   const { nuevoCandidato } = useContext(CandidatosContext);
 
   const onInputChange = (inputName) => (inputValue) => {
