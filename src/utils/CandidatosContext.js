@@ -26,8 +26,17 @@ export const CandidatosProvider = ({ children }) => {
     setCandidatos(nuevos);
   };
 
+  const nuevoCandidato = candidato => {
+    if (candidato != null){
+      setCandidatos(oldCandidatos => [
+        ...oldCandidatos,
+        {nombre: `${candidato.firstName} ${candidato.lastName}`, votos: 0}
+      ])
+    }
+  }
+
   return (
-    <CandidatosContext.Provider value={{ candidatos, votar }}>
+    <CandidatosContext.Provider value={{ candidatos, votar, nuevoCandidato }}>
       {children}
     </CandidatosContext.Provider>
   );
