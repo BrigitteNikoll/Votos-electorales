@@ -1,11 +1,7 @@
-import { Card, CardContent, Typography, Grid } from '@mui/material';
-import { useContext } from "react";
-import { CandidatosContext } from "../utils/CandidatosContext";
+import { Card, CardContent, Typography, Grid } from "@mui/material";
+import { connect } from "react-redux";
 
-
-const Escrutinio = () => {
-  const { candidatos } = useContext(CandidatosContext)
-
+export const Escrutinio = ({ candidatos }) => {
   return (
     <Grid item xs={12} md={6}>
       <Card>
@@ -13,10 +9,10 @@ const Escrutinio = () => {
           <Typography variant="h5">Escrutinio:</Typography>
 
           <Grid container item spacing={2}>
-            {candidatos.map(candidato => (
-              <Grid item xs={12} md={4} key={candidato.nombre}>
+            {candidatos.map((candidato) => (
+              <Grid item xs={4} md={4} key={candidato.nombre}>
                 <Typography variant="h3">{candidato.votos}</Typography>
-                <Typography  variant="h5" color="text.secondary" >
+                <Typography variant="h5" color="text.secondary">
                   {candidato.nombre}
                 </Typography>
               </Grid>
@@ -28,4 +24,8 @@ const Escrutinio = () => {
   );
 };
 
-export default Escrutinio
+const mapStateToProps = (state) => ({
+  candidatos: state.candidatos.candidatos,
+});
+
+export default connect(mapStateToProps, null)(Escrutinio);

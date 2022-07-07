@@ -1,9 +1,8 @@
-import { Card, CardContent, Grid, Typography } from "@mui/material";
-import { useContext } from "react";
-import { CandidatosContext } from "../utils/CandidatosContext";
+import { Card, CardContent, Grid, Typography } from '@mui/material';
+import { useSelector } from 'react-redux';
 
-const Total = () => {
-  const { candidatos } = useContext(CandidatosContext)
+export const Total = () => {
+  const candidatos = useSelector(state => state.candidatos.candidatos);
 
   const total = candidatos.reduce(
     (accumulator, candidato) => accumulator + candidato.votos,
@@ -12,7 +11,7 @@ const Total = () => {
 
   return (
     <Grid item container xs={12} md={6} spacing={2}>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={6} md={6}>
         <Card>
           <CardContent>
             <Typography variant="h5" gutterBottom>
@@ -25,7 +24,7 @@ const Total = () => {
         </Card>
       </Grid>
 
-      <Grid item xs={12} md={6}>
+      <Grid item xs={6} md={6}>
         <Card>
           <CardContent>
             <Typography variant="h5" gutterBottom>
@@ -40,4 +39,3 @@ const Total = () => {
     </Grid>
   );
 };
-export default Total;
